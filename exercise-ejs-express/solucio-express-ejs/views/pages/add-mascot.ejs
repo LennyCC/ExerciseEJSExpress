@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header', {currentPage: 'add-mascot'}); %>
+</header>
+
+<main>
+    <form action="/add-mascot" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" aria-describedby="name" maxlength="100" name="name">
+          <div id="name" class="form-text">The new of your mascot.</div>
+        </div>
+        <div class="mb-3">
+            <label for="floatingTextarea">Organization</label>
+
+            <textarea class="form-control" id="floatingTextarea" name="organization"></textarea>
+          </div>
+        <div class="mb-3">
+            <label for="year" class="form-label">Year</label>
+            <input type="number" class="form-control" id="name" aria-describedby="year" name="year" min="1980" max="2022">
+            <div id="year" class="form-text">When the mascot was created.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
